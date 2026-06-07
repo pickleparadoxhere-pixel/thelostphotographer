@@ -40,7 +40,7 @@ body {
   padding: 0 1.25rem;
 }
 
-/* ===== Premium Header Navigation (Mobile-First Architecture) ===== */
+/* ===== Premium Header Navigation ===== */
 .header {
   background: rgba(252, 251, 250, 0.95);
   backdrop-filter: blur(20px);
@@ -65,7 +65,7 @@ body {
   gap: 1rem;
 }
 
-/* Logo Optimization: Slightly larger to ensure readability[cite: 7] */
+/* Optimized Logo Sizing for text clarity[cite: 7] */
 .logo {
   height: 80px;
   width: 80px;
@@ -96,7 +96,7 @@ body {
   margin-top: 1px;
 }
 
-/* Fixed Navigation Layout Option: Pinned clean grid prevents links spilling onto a new line on mobile[cite: 7] */
+/* Clean Menu grid architecture logs links seamlessly on mobile views[cite: 7] */
 .nav-menu {
   display: grid;
   grid-template-columns: repeat(6, auto);
@@ -147,7 +147,7 @@ body {
   object-fit: cover;
   object-position: center 35%;
   will-change: transform;
-  transition: transform 0.1s ease-out; /* Keeps scroll updates snappy */
+  transition: transform 0.1s ease-out;
 }
 
 .hero-left {
@@ -238,13 +238,14 @@ body {
 }
 
 .about-slide.active {
-  opacity: 0.3;
+  opacity: 0.45;
 }
 
+/* Reduced shade overlay to 0.6 opacity to allow imagery visibility[cite: 1, 7] */
 .about-overlay {
   position: absolute;
   top: 0; left: 0; width: 100%; height: 100%;
-  background: rgba(10, 10, 10, 0.85);
+  background: rgba(10, 10, 10, 0.6);
   z-index: 2;
 }
 
@@ -274,7 +275,8 @@ body {
 }
 
 .about-bio {
-  color: #cccccc;
+  color: white;
+  text-shadow: 0px 1px 4px rgba(0,0,0,0.5);
   font-size: 0.95rem;
   line-height: 1.7;
   margin-bottom: 2rem;
@@ -284,14 +286,14 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  border-top: 1px solid rgba(255,255,255,0.1);
+  border-top: 1px solid rgba(255,255,255,0.2);
   padding-top: 1.5rem;
 }
 
 .badge-item {
   font-size: 11px;
   letter-spacing: 1px;
-  color: #aaaaaa;
+  color: #dddddd;
   text-transform: uppercase;
 }
 
@@ -370,7 +372,7 @@ body {
   color: var(--accent-muted);
 }
 
-/* ===== Gallery Architecture (Mobile Horizontal-Swipe System) ===== */
+/* ===== Gallery Architecture (Mobile Auto-Wrap Solution) ===== */
 .gallery-section {
   padding: 5rem 0;
   background: var(--light-editorial);
@@ -379,7 +381,7 @@ body {
 
 .section-header-center {
   text-align: center;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
 }
 
 .section-title {
@@ -394,26 +396,23 @@ body {
   font-size: 0.95rem;
 }
 
+/* FIXED: Changed to flex-wrap with center alignment so all titles sit beautifully in 2-3 rows without horizontal scrolling on mobile viewports[cite: 7] */
 .filter-container {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 0.5rem;
-  overflow-x: auto;
-  padding-bottom: 1rem;
   margin-bottom: 1.5rem;
-  -webkit-overflow-scrolling: touch;
-}
-
-.filter-container::-webkit-scrollbar {
-  display: none;
+  padding: 0 0.5rem;
 }
 
 .filter-btn {
   background: transparent;
   border: 1px solid var(--gray-border);
-  padding: 0.5rem 1.25rem;
+  padding: 0.45rem 1rem;
   font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
   color: var(--gray-deep);
   cursor: pointer;
   white-space: nowrap;
@@ -426,7 +425,6 @@ body {
   border-color: var(--dark-luxury);
 }
 
-/* Mobile Manual Arrow Controllers for Gallery Interaction[cite: 7] */
 .gallery-nav-buttons-mobile {
   display: flex;
   justify-content: flex-end;
@@ -451,11 +449,6 @@ body {
   box-shadow: 0 2px 6px rgba(0,0,0,0.03);
   transition: var(--transition-smooth);
   user-select: none;
-}
-
-.gal-nav-btn:active {
-  background: var(--dark-luxury);
-  color: white;
 }
 
 .gallery-scroll-container {
@@ -507,9 +500,11 @@ body {
   background: white;
   color: var(--dark-luxury);
   padding: 0.4rem 1rem;
-  font-family: var(--font-display);
-  font-size: 14px;
-  font-weight: 600;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 /* ===== Testimonials Section ===== */
@@ -630,41 +625,46 @@ body {
   margin-bottom: 1.5rem;
 }
 
-/* Truncated Social Pill System: Aligns to individual text length automatically[cite: 7] */
+/* FIXED: Unified sizing boxes based on longest string + solid clean white background overrides[cite: 1, 7] */
 .modern-social-pills {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 0.75rem;
+  width: 100%;
 }
 
-.pill-btn {
-  display: inline-flex;
+.pill-white-uniform {
+  background: #ffffff !important;
+  color: var(--dark-luxury) !important;
+  border: 1px solid var(--gray-border);
+  display: flex;
   align-items: center;
   gap: 0.75rem;
-  padding: 0.75rem 1.25rem;
+  padding: 0.85rem 1.25rem;
   text-decoration: none;
   font-size: 12px;
   font-weight: 700;
-  width: auto; /* Shrinks container down to fit text */
+  /* Uniform sizing enforced via exact width matching to the longest link asset length */
+  width: 250px; 
   transition: var(--transition-smooth);
 }
 
-.pill-svg {
-  width: 18px;
-  height: 18px;
-  flex-shrink: 0;
+/* Core SVG brand coloring implementations instead of dark boxes[cite: 1, 7] */
+.icon-instagram-gradient {
+  stroke: url(#instaGlow) !important;
+  /* Appending a soft color fall-back layer */
+  color: #e1306c; 
 }
 
-.pill-instagram {
-  background: white;
-  color: var(--dark-luxury);
-  border: 1px solid var(--gray-border);
+.icon-whatsapp-brand {
+  fill: #25D366 !important;
 }
 
-.pill-whatsapp {
-  background: #25D366;
-  color: white;
+.pill-white-uniform:hover {
+  transform: translateY(-2px);
+  border-color: var(--dark-luxury);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
 /* ===== Floating Go To Top Interface Button ===== */
@@ -759,7 +759,6 @@ body {
     padding: 0 2.5rem;
   }
   
-  /* Menu transforms effortlessly into widescreen luxury list layout */
   .nav-menu {
     display: flex;
     gap: 2rem;
@@ -788,9 +787,9 @@ body {
   .team-main-heading { font-size: 3rem; }
 
   .section-title { font-size: 3rem; }
-  .filter-container { justify-content: center; overflow: visible; }
+  .filter-container { justify-content: center; overflow: visible; gap: 0.8rem; }
+  .filter-btn { padding: 0.7rem 1.6rem; font-size: 12px; }
 
-  /* Desktop Grid Overrides (Arrows fade away gracefully as horizontal track expands into fluid multi-row grid layout)[cite: 7] */
   .gallery-nav-buttons-mobile { display: none; }
   .gallery-scroll-container { margin: 0; padding: 0; overflow: visible; }
   .gallery-grid {
@@ -814,10 +813,6 @@ body {
   .contact-card-wrapper { grid-template-columns: 1.2fr 0.8fr; gap: 4rem; }
   .contact-details-list { grid-template-columns: 1fr 1fr; }
   .contact-social-pane { padding: 3rem; }
-  
-  .pill-btn:hover { transform: translateY(-2px); }
-  .pill-instagram:hover { background: var(--dark-luxury); color: white; }
-  .pill-whatsapp:hover { background: #1da84f; }
   
   .scroll-top-trigger:hover { background: var(--accent-muted); transform: translateY(-3px); }
   
