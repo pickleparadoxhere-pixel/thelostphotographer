@@ -1,6 +1,55 @@
 document.addEventListener('DOMContentLoaded', () => {
   
-  // ===== About Cinematic Slideshow Background Action =====
+  // ===== Cinematic Scroll Animation (Hero Zoom Effect) =====
+  const heroImage = document.getElementById('heroScrollImg');
+  if (heroImage) {
+    window.addEventListener('scroll', () => {
+      const scrollOffset = window.pageYOffset;
+      // Gently scale the image up as the user scrolls down
+      const scaleValue = 1 + (scrollOffset * 0.0005);
+      
+      // Limit max scale to avoid pixelation distortions
+      if (scaleValue <= 1.25) {
+        heroImage.style.transform = `scale(${scaleValue})`;
+      }
+    });
+  }
+
+  // ===== Gallery Track Manual Navigation Arrow Actions (Mobile Interface Viewports Only) =====
+  const track = document.getElementById('galleryTrack');
+  const leftArrow = document.getElementById('slideLeftBtn');
+  const rightArrow = document.getElementById('slideRightBtn');
+
+  if (track && leftArrow && rightArrow) {
+    // Scroll track distance matched to mobile card scale metrics
+    const scrollDistance = window.innerWidth * 0.8;
+
+    rightArrow.addEventListener('click', () => {
+      track.scrollBy({ left: scrollDistance, behavior: 'smooth' });
+    });
+
+    leftArrow.addEventListener('click', () => {
+      track.scrollBy({ left: -scrollDistance, behavior: 'smooth' });
+    });
+  }
+
+  // ===== Dynamic Floating Go To Top Interface Interaction =====
+  const scrollTopBtn = document.getElementById('scrollTopBtn');
+  if (scrollTopBtn) {
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 400) {
+        scrollTopBtn.classList.add('visible');
+      } else {
+        scrollTopBtn.classList.remove('visible');
+      }
+    });
+
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  // ===== About Cinematic Background Slideshow Action =====
   const aboutSlideshow = (() => {
     const slides = document.querySelectorAll('.about-slide');
     if (slides.length === 0) return;
