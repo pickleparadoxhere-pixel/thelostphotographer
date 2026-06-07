@@ -42,7 +42,7 @@ body {
 
 /* ===== Premium Header Navigation (Mobile-First Architecture) ===== */
 .header {
-  background: rgba(252, 251, 250, 0.92);
+  background: rgba(252, 251, 250, 0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   padding: 1rem 0;
@@ -56,7 +56,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 1.25rem;
 }
 
 .logo-container {
@@ -65,14 +65,14 @@ body {
   gap: 1rem;
 }
 
-/* Updated logo design frames with safe borders */
+/* Logo Optimization: Slightly larger to ensure readability[cite: 7] */
 .logo {
-  height: 65px;
-  width: 65px;
+  height: 80px;
+  width: 80px;
   object-fit: cover;
   border-radius: 50%;
   border: 1px solid var(--gray-border);
-  filter: drop-shadow(0px 2px 6px rgba(0,0,0,0.06));
+  filter: drop-shadow(0px 2px 8px rgba(0,0,0,0.06));
   transition: var(--transition-smooth);
 }
 
@@ -96,28 +96,32 @@ body {
   margin-top: 1px;
 }
 
+/* Fixed Navigation Layout Option: Pinned clean grid prevents links spilling onto a new line on mobile[cite: 7] */
 .nav-menu {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(6, auto);
   justify-content: center;
-  gap: 1rem 1.25rem;
+  gap: 0 0.75rem;
+  width: 100%;
 }
 
 .nav-menu a {
   text-decoration: none;
   color: var(--gray-deep);
-  font-weight: 600;
-  font-size: 11px;
+  font-weight: 700;
+  font-size: 10px;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   transition: var(--transition-smooth);
+  text-align: center;
+  white-space: nowrap;
 }
 
 .nav-menu a:hover {
   color: var(--accent-muted);
 }
 
-/* ===== Mobile-First Stacked Hero Section Layout ===== */
+/* ===== Hero Section Layout ===== */
 .hero-split {
   display: flex;
   flex-direction: column;
@@ -142,12 +146,18 @@ body {
   height: 100%;
   object-fit: cover;
   object-position: center 35%;
+  will-change: transform;
+  transition: transform 0.1s ease-out; /* Keeps scroll updates snappy */
 }
 
 .hero-left {
   display: flex;
   align-items: center;
   padding: 3rem 1.25rem;
+}
+
+.hero-text-wrapper {
+  width: 100%;
 }
 
 .hero-tag {
@@ -204,7 +214,7 @@ body {
   color: var(--dark-luxury);
 }
 
-/* ===== Cinematic About Background Section Layout ===== */
+/* ===== About Section Layout ===== */
 .about-cinematic {
   position: relative;
   padding: 5rem 0;
@@ -292,7 +302,7 @@ body {
   color: var(--accent-muted);
 }
 
-/* ===== Premium Team Architecture Section ===== */
+/* ===== Team Section Layout ===== */
 .team-section {
   padding: 5rem 0;
   background: #fbf9f6;
@@ -316,11 +326,6 @@ body {
   height: auto;
   display: block;
   object-fit: cover;
-  transition: var(--transition-smooth);
-}
-
-.team-wrapper:hover .team-img {
-  transform: scale(1.02);
 }
 
 .team-details {
@@ -365,10 +370,11 @@ body {
   color: var(--accent-muted);
 }
 
-/* ===== Modern Portfolio / Gallery Section ===== */
+/* ===== Gallery Architecture (Mobile Horizontal-Swipe System) ===== */
 .gallery-section {
   padding: 5rem 0;
   background: var(--light-editorial);
+  position: relative;
 }
 
 .section-header-center {
@@ -393,7 +399,7 @@ body {
   gap: 0.5rem;
   overflow-x: auto;
   padding-bottom: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -420,7 +426,38 @@ body {
   border-color: var(--dark-luxury);
 }
 
-/* Mobile Horizontal Swiping Enabled Track Wrapper */
+/* Mobile Manual Arrow Controllers for Gallery Interaction[cite: 7] */
+.gallery-nav-buttons-mobile {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  padding: 0 0.25rem;
+}
+
+.gal-nav-btn {
+  background: white;
+  border: 1px solid var(--gray-border);
+  color: var(--dark-luxury);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+  transition: var(--transition-smooth);
+  user-select: none;
+}
+
+.gal-nav-btn:active {
+  background: var(--dark-luxury);
+  color: white;
+}
+
 .gallery-scroll-container {
   margin: 0 -1.25rem;
   padding: 0 1.25rem;
@@ -460,7 +497,7 @@ body {
 .overlay {
   position: absolute;
   top: 0; left: 0; width: 100%; height: 100%;
-  background: rgba(17, 17, 17, 0.3);
+  background: rgba(17, 17, 17, 0.4);
   display: flex;
   align-items: flex-end;
   padding: 1.25rem;
@@ -470,13 +507,12 @@ body {
   background: white;
   color: var(--dark-luxury);
   padding: 0.4rem 1rem;
-  font-size: 10px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
 }
 
-/* ===== Client Stories Section ===== */
+/* ===== Testimonials Section ===== */
 .testimonials-section {
   padding: 5rem 0;
   background: #f7f5f2;
@@ -493,7 +529,6 @@ body {
 .testimonial-card {
   background: white;
   padding: 2.25rem 1.5rem;
-  border: 1px solid rgba(0,0,0,0.02);
 }
 
 .stars {
@@ -526,7 +561,7 @@ body {
   margin-top: 2px;
 }
 
-/* ===== Contact Layout & Minimal Social System ===== */
+/* ===== Contact Section Layout ===== */
 .contact-section {
   padding: 5rem 0;
   background: var(--light-editorial);
@@ -595,26 +630,30 @@ body {
   margin-bottom: 1.5rem;
 }
 
+/* Truncated Social Pill System: Aligns to individual text length automatically[cite: 7] */
 .modern-social-pills {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 0.75rem;
 }
 
 .pill-btn {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  padding: 0.85rem 1.25rem;
+  padding: 0.75rem 1.25rem;
   text-decoration: none;
   font-size: 12px;
   font-weight: 700;
+  width: auto; /* Shrinks container down to fit text */
   transition: var(--transition-smooth);
 }
 
 .pill-svg {
   width: 18px;
   height: 18px;
+  flex-shrink: 0;
 }
 
 .pill-instagram {
@@ -628,7 +667,35 @@ body {
   color: white;
 }
 
-/* ===== Lightbox Core Modules ===== */
+/* ===== Floating Go To Top Interface Button ===== */
+.scroll-top-trigger {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 45px;
+  height: 45px;
+  background: var(--dark-luxury);
+  border: none;
+  color: white;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition-smooth);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.scroll-top-trigger.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ===== Lightbox Modules ===== */
 .lightbox {
   display: none;
   position: fixed;
@@ -658,7 +725,7 @@ body {
   cursor: pointer;
 }
 
-/* Minimal Editorial Footer Credit Styling */
+/* Minimal Editorial Footer Custom Linkage style */
 .footer {
   background: var(--dark-luxury);
   color: rgba(255,255,255,0.4);
@@ -692,7 +759,12 @@ body {
     padding: 0 2.5rem;
   }
   
-  .nav-menu { gap: 2rem; }
+  /* Menu transforms effortlessly into widescreen luxury list layout */
+  .nav-menu {
+    display: flex;
+    gap: 2rem;
+    width: auto;
+  }
   .nav-menu a { font-size: 12px; letter-spacing: 1.5px; }
 
   .hero-split {
@@ -718,7 +790,8 @@ body {
   .section-title { font-size: 3rem; }
   .filter-container { justify-content: center; overflow: visible; }
 
-  /* Grid Shift for Desktop Viewports */
+  /* Desktop Grid Overrides (Arrows fade away gracefully as horizontal track expands into fluid multi-row grid layout)[cite: 7] */
+  .gallery-nav-buttons-mobile { display: none; }
   .gallery-scroll-container { margin: 0; padding: 0; overflow: visible; }
   .gallery-grid {
     display: grid;
@@ -741,9 +814,12 @@ body {
   .contact-card-wrapper { grid-template-columns: 1.2fr 0.8fr; gap: 4rem; }
   .contact-details-list { grid-template-columns: 1fr 1fr; }
   .contact-social-pane { padding: 3rem; }
+  
   .pill-btn:hover { transform: translateY(-2px); }
   .pill-instagram:hover { background: var(--dark-luxury); color: white; }
   .pill-whatsapp:hover { background: #1da84f; }
+  
+  .scroll-top-trigger:hover { background: var(--accent-muted); transform: translateY(-3px); }
   
   .lightbox-image { max-width: 85vw; max-height: 85vh; }
   .close-lightbox { top: 30px; right: 40px; font-size: 36px; }
