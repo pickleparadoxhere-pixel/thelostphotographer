@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   
-  // ===== About Cinematic Slideshow =====
-  // Transitions the remaining 3 pictures beautifully in the background
+  // ===== About Cinematic Slideshow Background Action =====
   const aboutSlideshow = (() => {
     const slides = document.querySelectorAll('.about-slide');
     if (slides.length === 0) return;
@@ -14,11 +13,10 @@ document.addEventListener('DOMContentLoaded', () => {
       slides[currentIdx].classList.add('active');
     };
     
-    // Auto transition every 4.5 seconds
     setInterval(nextSlide, 4500);
   })();
 
-  // ===== Filter Infrastructure =====
+  // ===== Filter Infrastructure Architecture =====
   const galleryFilter = (() => {
     const filterBtns = document.querySelectorAll('.filter-btn');
     const galleryItems = document.querySelectorAll('.gallery-item');
@@ -49,13 +47,12 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
     
-    // Setup base transition defaults
     galleryItems.forEach(item => {
       item.style.transition = 'opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
     });
   })();
 
-  // ===== Lightbox Framework =====
+  // ===== Lightbox Core Modules Framework =====
   const lightboxGallery = (() => {
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.querySelector('.lightbox-image');
