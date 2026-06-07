@@ -1,38 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-  
-  // ===== Inject SVG Gradients for Instagram Icon Authenticity =====
-  const injectGradients = (() => {
-    const svgNS = "http://www.w3.org/2000/svg";
-    const defs = document.createElementNS(svgNS, "defs");
-    const linearGradient = document.createElementNS(svgNS, "linearGradient");
-    
-    linearGradient.setAttribute("id", "instaGlow");
-    linearGradient.setAttribute("x1", "20%");
-    linearGradient.setAttribute("y1", "100%");
-    linearGradient.setAttribute("x2", "80%");
-    linearGradient.setAttribute("y2", "0%");
-
-    const stops = [
-      { offset: "0%", color: "#fdf497" },
-      { offset: "5%", color: "#fdf497" },
-      { offset: "45%", color: "#fd5949" },
-      { offset: "60%", color: "#d6249f" },
-      { offset: "100%", color: "#285AEB" }
-    ];
-
-    stops.forEach(s => {
-      const stop = document.createElementNS(svgNS, "stop");
-      stop.setAttribute("offset", s.offset);
-      stop.setAttribute("stop-color", s.color);
-      defs.appendChild(stop);
-    });
-
-    // Append directly inside the first encountered HTML svg tag tree setup
-    const firstSvg = document.querySelector('.pill-svg');
-    if (firstSvg) {
-      firstSvg.insertBefore(defs, firstSvg.firstChild);
-    }
-  })();
 
   // ===== Cinematic Scroll Animation (Hero Zoom Effect) =====
   const heroImage = document.getElementById('heroScrollImg');
