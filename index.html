@@ -17,7 +17,8 @@
   <header class="header">
     <div class="header-content">
       <div class="logo-container">
-        <img src="https://res.cloudinary.com/dvctgflah/image/upload/v1780079126/5_um3fiy.png" alt="The Lost Photographer Logo" class="logo">
+        <!-- High-visibility black font branding variant -->
+        <img src="https://res.cloudinary.com/dvctgflah/image/upload/v1780818914/4_oqpxis.jpg" alt="The Lost Photographer Logo" class="logo">
         <div class="branding-text">
           <span class="site-name">THE LOST PHOTOGRAPHER</span>
           <span class="site-sub">BY RONAK PARMAR</span>
@@ -26,6 +27,7 @@
       <nav class="nav-menu">
         <a href="#home">Home</a>
         <a href="#about">About</a>
+        <a href="#team">Team</a>
         <a href="#gallery">Portfolio</a>
         <a href="#testimonials">Stories</a>
         <a href="#contact">Contact</a>
@@ -33,8 +35,13 @@
     </div>
   </header>
 
-  <!-- Split Hero Section -->
+  <!-- Split Hero Section (Stacked on Mobile, Side-by-Side on Desktop) -->
   <section class="hero-split" id="home">
+    <div class="hero-right">
+      <div class="hero-static-frame">
+        <img src="https://res.cloudinary.com/dvctgflah/image/upload/v1780755781/SaveClip.App_650959082_18115196377565102_6598422578232592987_n_x9zpd7.jpg" alt="Featured Work by The Lost Photographer" class="hero-static-img">
+      </div>
+    </div>
     <div class="hero-left">
       <div class="hero-text-wrapper">
         <span class="hero-tag">EST. 2016</span>
@@ -44,18 +51,13 @@
         </p>
         <div class="hero-cta-group">
           <a href="#gallery" class="btn btn-primary">Explore Portfolio</a>
-          <a href="#contact" class="btn btn-secondary">Book a Session</a>
+          <a href="#contact" class="btn btn-secondary">Book Session</a>
         </div>
-      </div>
-    </div>
-    <div class="hero-right">
-      <div class="hero-static-frame">
-        <img src="https://res.cloudinary.com/dvctgflah/image/upload/v1780755781/SaveClip.App_650959082_18115196377565102_6598422578232592987_n_x9zpd7.jpg" alt="Featured Work by The Lost Photographer" class="hero-static-img">
       </div>
     </div>
   </section>
 
-  <!-- New Cinematic About Me Section with Transitioning Images -->
+  <!-- Cinematic About Me Section with Transitioning Background Images -->
   <section class="about-cinematic" id="about">
     <div class="about-slideshow">
       <img class="about-slide active" src="https://res.cloudinary.com/dvctgflah/image/upload/v1780755779/SaveClip.App_620966028_18082344908517397_7005391877708654421_n_mi7v2o.jpg" alt="Portfolio Highlight 1">
@@ -73,6 +75,29 @@
         <div class="about-badges">
           <div class="badge-item"><span>10+</span> Years Crafting Art</div>
           <div class="badge-item"><span>500+</span> Stories Told</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clean Production Team Layout Section -->
+  <section class="team-section" id="team">
+    <div class="container">
+      <div class="team-wrapper">
+        <div class="team-visual">
+          <img src="https://res.cloudinary.com/dvctgflah/image/upload/v1780755956/SaveClip.App_588645798_18493589647078368_1169647811389882562_n_2_hnvyip.jpg" alt="The Lost Photographer Production Crew" class="team-img">
+        </div>
+        <div class="team-details">
+          <span class="section-subtitle">CREATIVE SYNCHRONICITY</span>
+          <h3 class="team-main-heading">The Production Crew</h3>
+          <p class="team-bio-text">
+            Behind every flawless visual asset is a unified force of creative experts. While Ronak orchestrates the direction and composition profile, our collaborative team ensures lighting arrays, background curation, art sets, and real-time production coordination run seamlessly. We operate in synergy to deliver absolute high-end lifestyle documentation.
+          </p>
+          <ul class="team-bullets">
+            <li>Dedicated Lighting Experts & Grip Crew</li>
+            <li>Advanced On-Site Set Stylists</li>
+            <li>Premium Next-Gen Cinema Workflow Editors</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -96,7 +121,7 @@
         <button class="filter-btn" data-filter="fitness">Fitness & Power</button>
       </div>
 
-      <!-- Gallery Track wrapper for enhanced mobile scrolling experience -->
+      <!-- Horizontal Swipe Box for Mobile, Grid for Desktop -->
       <div class="gallery-scroll-container">
         <div class="gallery-grid">
           <!-- Baby -->
@@ -193,7 +218,7 @@
     </div>
   </section>
 
-  <!-- Lightbox -->
+  <!-- Lightbox Frame -->
   <div class="lightbox" id="lightbox">
     <span class="close-lightbox">&times;</span>
     <img class="lightbox-image" src="" alt="">
@@ -203,7 +228,7 @@
     </div>
   </div>
 
-  <!-- Testimonials Section Personalized for Ronak -->
+  <!-- Testimonials Section -->
   <section class="testimonials-section" id="testimonials">
     <div class="container">
       <div class="section-header-center">
@@ -226,14 +251,15 @@
         <div class="testimonial-card">
           <div class="stars">★★★★★</div>
           <p class="testimonial-text">"Ronak brought so much patience and absolute brilliance to our child's baby photoshoot. These images are priceless family treasures now. A true master of composition."</p>
-          <p class="testimonial-author">Priyal & Priyanka</p>
+          <!-- Corrected name per requested edit -->
+          <p class="testimonial-author">Priyal & Pritika</p>
           <p class="testimonial-type">Baby Portrait Client</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Contact & Minimal Social Section -->
+  <!-- Contact Section -->
   <section class="contact-section" id="contact">
     <div class="container">
       <div class="contact-card-wrapper">
@@ -272,7 +298,7 @@
               <span>@the.lostphotographer</span>
             </a>
 
-            <!-- Repaired Fixed WhatsApp SVG Pill -->
+            <!-- Fixed Scalable WhatsApp SVG Pill -->
             <a href="https://wa.me/919586027280" target="_blank" class="pill-btn pill-whatsapp">
               <svg class="pill-svg" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12.004 2C6.48 2 2 6.48 2 12c0 2.17.7 4.21 2 5.87L2.5 22l4.3-1.45c1.61.92 3.45 1.45 5.2 1.45 5.52 0 10-4.48 10-10S17.52 2 12.004 2zm5.72 14.13c-.24.68-1.21 1.25-1.67 1.32-.46.07-.92.1-2.92-.72-2.56-1.05-4.18-3.66-4.31-3.84-.13-.18-1.03-1.37-1.03-2.61 0-1.24.65-1.85.88-2.1.23-.25.5-.31.67-.31h.47c.15 0 .36-.06.56.42.2.49.69 1.68.75 1.8.06.12.1.27.02.43-.08.16-.18.27-.3.41-.12.14-.26.32-.37.43-.12.12-.25.25-.11.49.14.24.63 1.03 1.35 1.67.93.83 1.71 1.08 1.95 1.21.24.12.38.1.52-.06.14-.16.61-.71.77-.95.16-.24.33-.2.56-.12.23.09 1.46.69 1.71.81.25.12.42.18.48.29.06.11.06.64-.18 1.32z"/>
@@ -285,10 +311,10 @@
     </div>
   </section>
 
-  <!-- Editorial Minimal Footer -->
+  <!-- Editorial Minimal Footer with requested custom layout designer linkage credit -->
   <footer class="footer">
     <div class="container">
-      <p>&copy; 2026 THE LOST PHOTOGRAPHER &bull; DESIGNED FOR HIGH IMPACT</p>
+      <p>&copy; 2026 THE LOST PHOTOGRAPHER &bull; DESIGNED BY <a href="https://instagram.com/jigarwhatnow" target="_blank" class="footer-credit-link">@jigarwhatnow</a></p>
     </div>
   </footer>
 
