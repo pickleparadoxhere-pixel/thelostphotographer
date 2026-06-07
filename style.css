@@ -65,7 +65,6 @@ body {
   gap: 1rem;
 }
 
-/* Optimized Logo Sizing for text clarity[cite: 7] */
 .logo {
   height: 80px;
   width: 80px;
@@ -96,7 +95,6 @@ body {
   margin-top: 1px;
 }
 
-/* Clean Menu grid architecture logs links seamlessly on mobile views[cite: 7] */
 .nav-menu {
   display: grid;
   grid-template-columns: repeat(6, auto);
@@ -214,6 +212,23 @@ body {
   color: var(--dark-luxury);
 }
 
+/* ===== Section Divider Banner (Desktop Only Separator Layout) ===== */
+.section-divider-banner {
+  display: none; /* Hidden on mobile viewports naturally */
+  background: var(--light-editorial);
+  padding: 5rem 0;
+  text-align: center;
+  border-top: 1px solid var(--gray-border);
+  border-bottom: 1px solid var(--gray-border);
+}
+
+.divider-quote {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-style: italic;
+  color: var(--accent-muted);
+}
+
 /* ===== About Section Layout ===== */
 .about-cinematic {
   position: relative;
@@ -241,7 +256,6 @@ body {
   opacity: 0.45;
 }
 
-/* Reduced shade overlay to 0.6 opacity to allow imagery visibility[cite: 1, 7] */
 .about-overlay {
   position: absolute;
   top: 0; left: 0; width: 100%; height: 100%;
@@ -372,7 +386,7 @@ body {
   color: var(--accent-muted);
 }
 
-/* ===== Gallery Architecture (Mobile Auto-Wrap Solution) ===== */
+/* ===== Gallery Architecture ===== */
 .gallery-section {
   padding: 5rem 0;
   background: var(--light-editorial);
@@ -396,7 +410,6 @@ body {
   font-size: 0.95rem;
 }
 
-/* FIXED: Changed to flex-wrap with center alignment so all titles sit beautifully in 2-3 rows without horizontal scrolling on mobile viewports[cite: 7] */
 .filter-container {
   display: flex;
   flex-wrap: wrap;
@@ -556,7 +569,7 @@ body {
   margin-top: 2px;
 }
 
-/* ===== Contact Section Layout ===== */
+/* ===== Contact Section & Fixed Social Pills Layout ===== */
 .contact-section {
   padding: 5rem 0;
   background: var(--light-editorial);
@@ -625,7 +638,6 @@ body {
   margin-bottom: 1.5rem;
 }
 
-/* FIXED: Unified sizing boxes based on longest string + solid clean white background overrides[cite: 1, 7] */
 .modern-social-pills {
   display: flex;
   flex-direction: column;
@@ -634,30 +646,51 @@ body {
   width: 100%;
 }
 
-.pill-white-uniform {
-  background: #ffffff !important;
-  color: var(--dark-luxury) !important;
-  border: 1px solid var(--gray-border);
-  display: flex;
+/* FIXED Uniform Pill Setup */
+.pill-btn {
+  display: inline-flex;
   align-items: center;
   gap: 0.75rem;
   padding: 0.85rem 1.25rem;
   text-decoration: none;
   font-size: 12px;
   font-weight: 700;
-  /* Uniform sizing enforced via exact width matching to the longest link asset length */
-  width: 250px; 
+  width: 250px; /* Uniform scale cap matching longest wire segment */
   transition: var(--transition-smooth);
 }
 
-/* Core SVG brand coloring implementations instead of dark boxes[cite: 1, 7] */
-.icon-instagram-gradient {
-  stroke: url(#instaGlow) !important;
-  /* Appending a soft color fall-back layer */
-  color: #e1306c; 
+.pill-white-uniform {
+  background: #ffffff !important;
+  color: var(--dark-luxury) !important;
+  border: 1px solid var(--gray-border);
 }
 
-.icon-whatsapp-brand {
+/* FIXED Vector Rendering Properties for complete visibility layout */
+.pill-svg {
+  width: 22px !important;
+  height: 22px !important;
+  min-width: 22px !important;
+  min-height: 22px !important;
+  display: inline-block !important;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+/* FIXED: Official Instagram Brand Vector Color Mapping */
+.insta-icon-vector {
+  stroke: none !important;
+  fill: none !important;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285aeb 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  filter: drop-shadow(0px 1px 2px rgba(0,0,0,0.1));
+  /* Dynamic multi-stop colorful fallback overlay execution */
+  color: #c13584; 
+  stroke: #c13584 !important;
+}
+
+/* FIXED: Official WhatsApp Vector Scale constraints */
+.whatsapp-icon-vector {
   fill: #25D366 !important;
 }
 
@@ -725,7 +758,6 @@ body {
   cursor: pointer;
 }
 
-/* Minimal Editorial Footer Custom Linkage style */
 .footer {
   background: var(--dark-luxury);
   color: rgba(255,255,255,0.4);
@@ -775,6 +807,11 @@ body {
   .hero-left { order: 1; padding: 4rem 4rem 4rem 0; margin-left: max(2.5rem, calc((100vw - 1340px)/2 + 2.5rem)); }
   .hero-title { font-size: 4.5rem; }
   .hero-cta-group { flex-direction: row; }
+
+  /* Desktop Separator Active State Configuration */
+  .section-divider-banner {
+    display: block;
+  }
 
   .about-cinematic { padding: 8rem 0; }
   .about-badges { flex-direction: row; gap: 3rem; }
