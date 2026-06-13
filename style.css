@@ -212,9 +212,9 @@ body {
   color: var(--dark-luxury);
 }
 
-/* ===== Section Divider Banner (Desktop Only Separator Layout) ===== */
+/* ===== Section Divider Banner ===== */
 .section-divider-banner {
-  display: none; /* Hidden on mobile viewports naturally */
+  display: none;
   background: var(--light-editorial);
   padding: 5rem 0;
   text-align: center;
@@ -520,12 +520,59 @@ body {
   letter-spacing: 1px;
 }
 
-/* ===== Testimonials Section ===== */
+/* ===== Testimonials & Google Review Architecture ===== */
 .testimonials-section {
   padding: 5rem 0;
   background: #f7f5f2;
   border-top: 1px solid var(--gray-border);
   border-bottom: 1px solid var(--gray-border);
+}
+
+.google-reviews-widget-wrapper {
+  background: #ffffff;
+  padding: 2rem 1.25rem;
+  border: 1px solid var(--gray-border);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.google-badge-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--gray-border);
+  padding-bottom: 1.25rem;
+}
+
+.google-badge-header .g-icon {
+  background: #4285F4;
+  color: white;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 20px;
+  font-family: var(--font-sans);
+}
+
+.g-meta h4 {
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.g-meta p {
+  font-size: 12px;
+  color: var(--gray-mid);
+  font-weight: 600;
+}
+
+.g-meta a {
+  color: #4285F4;
+  text-decoration: none;
 }
 
 .testimonials-carousel {
@@ -535,13 +582,14 @@ body {
 }
 
 .testimonial-card {
-  background: white;
+  background: #fcfbfa;
   padding: 2.25rem 1.5rem;
+  border: 1px solid var(--gray-border);
 }
 
 .stars {
-  color: var(--accent-muted);
-  font-size: 11px;
+  color: #fbbc05; /* True Google Star Gold tint */
+  font-size: 12px;
   letter-spacing: 2px;
   margin-bottom: 1rem;
 }
@@ -569,7 +617,7 @@ body {
   margin-top: 2px;
 }
 
-/* ===== Contact Section & Fixed Social Pills Layout ===== */
+/* ===== Contact Section & Social Layout ===== */
 .contact-section {
   padding: 5rem 0;
   background: var(--light-editorial);
@@ -602,6 +650,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1.75rem;
+  margin-bottom: 2.5rem;
 }
 
 .detail-node h4 {
@@ -617,6 +666,21 @@ body {
   font-weight: 600;
   color: var(--dark-luxury);
   text-decoration: none;
+}
+
+/* Map Card Framework: Scaled to render natively across small phone screens safely */
+.google-map-embed-card {
+  width: 100%;
+  border: 1px solid var(--gray-border);
+  background: #ffffff;
+  padding: 0.5rem;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.google-map-embed-card iframe {
+  width: 100% !important;
+  display: block;
 }
 
 .contact-social-pane {
@@ -646,7 +710,6 @@ body {
   width: 100%;
 }
 
-/* FIXED Uniform Pill Setup */
 .pill-btn {
   display: inline-flex;
   align-items: center;
@@ -655,7 +718,7 @@ body {
   text-decoration: none;
   font-size: 12px;
   font-weight: 700;
-  width: 250px; /* Uniform scale cap matching longest wire segment */
+  width: 250px; 
   transition: var(--transition-smooth);
 }
 
@@ -665,7 +728,6 @@ body {
   border: 1px solid var(--gray-border);
 }
 
-/* FIXED Vector Rendering Properties for complete visibility layout */
 .pill-svg {
   width: 22px !important;
   height: 22px !important;
@@ -676,20 +738,17 @@ body {
   flex-shrink: 0;
 }
 
-/* FIXED: Official Instagram Brand Vector Color Mapping */
+/* Handled explicit color parameters cleanly */
 .insta-icon-vector {
   stroke: none !important;
   fill: none !important;
   background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285aeb 90%);
   -webkit-background-clip: text;
   background-clip: text;
-  filter: drop-shadow(0px 1px 2px rgba(0,0,0,0.1));
-  /* Dynamic multi-stop colorful fallback overlay execution */
   color: #c13584; 
   stroke: #c13584 !important;
 }
 
-/* FIXED: Official WhatsApp Vector Scale constraints */
 .whatsapp-icon-vector {
   fill: #25D366 !important;
 }
@@ -700,7 +759,7 @@ body {
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
-/* ===== Floating Go To Top Interface Button ===== */
+/* ===== Floating Go To Top Button ===== */
 .scroll-top-trigger {
   position: fixed;
   bottom: 25px;
@@ -808,7 +867,7 @@ body {
   .hero-title { font-size: 4.5rem; }
   .hero-cta-group { flex-direction: row; }
 
-  /* Desktop Separator Active State Configuration */
+  /* Displays divider smoothly on wide views */
   .section-divider-banner {
     display: block;
   }
@@ -839,6 +898,11 @@ body {
   .gallery-item:hover .overlay { opacity: 1; }
   .gallery-item img { transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1); }
   .gallery-item:hover img { transform: scale(1.06); }
+
+  /* Expanded nested review pane framing layout */
+  .google-reviews-widget-wrapper {
+    padding: 3.5rem 3rem;
+  }
 
   .testimonials-carousel {
     display: grid;
