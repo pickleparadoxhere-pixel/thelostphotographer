@@ -520,7 +520,7 @@ body {
   letter-spacing: 1px;
 }
 
-/* ===== Testimonials & Google Review Architecture ===== */
+/* ===== Testimonials & Live Google Widget Section ===== */
 .testimonials-section {
   padding: 5rem 0;
   background: #f7f5f2;
@@ -530,94 +530,12 @@ body {
 
 .google-reviews-widget-wrapper {
   background: #ffffff;
-  padding: 2rem 1.25rem;
+  padding: 1.5rem 1rem;
   border: 1px solid var(--gray-border);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.02);
 }
 
-.google-badge-header {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  border-bottom: 1px solid var(--gray-border);
-  padding-bottom: 1.25rem;
-}
-
-.google-badge-header .g-icon {
-  background: #4285F4;
-  color: white;
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 800;
-  font-size: 20px;
-  font-family: var(--font-sans);
-}
-
-.g-meta h4 {
-  font-size: 16px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.g-meta p {
-  font-size: 12px;
-  color: var(--gray-mid);
-  font-weight: 600;
-}
-
-.g-meta a {
-  color: #4285F4;
-  text-decoration: none;
-}
-
-.testimonials-carousel {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.testimonial-card {
-  background: #fcfbfa;
-  padding: 2.25rem 1.5rem;
-  border: 1px solid var(--gray-border);
-}
-
-.stars {
-  color: #fbbc05; /* True Google Star Gold tint */
-  font-size: 12px;
-  letter-spacing: 2px;
-  margin-bottom: 1rem;
-}
-
-.testimonial-text {
-  font-size: 0.95rem;
-  line-height: 1.7;
-  color: var(--gray-deep);
-  font-style: italic;
-  margin-bottom: 1.5rem;
-}
-
-.testimonial-author {
-  font-weight: 700;
-  font-size: 14px;
-  color: var(--dark-luxury);
-}
-
-.testimonial-type {
-  font-size: 11px;
-  color: var(--accent-muted);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-top: 2px;
-}
-
-/* ===== Contact Section & Social Layout ===== */
+/* ===== Contact Section & Custom Styled Map ===== */
 .contact-section {
   padding: 5rem 0;
   background: var(--light-editorial);
@@ -668,19 +586,31 @@ body {
   text-decoration: none;
 }
 
-/* Map Card Framework: Scaled to render natively across small phone screens safely */
+/* Premium Map Upgrade: Frame Wrapper Styles */
 .google-map-embed-card {
   width: 100%;
-  border: 1px solid var(--gray-border);
+  border: 1px solid var(--dark-luxury);
   background: #ffffff;
   padding: 0.5rem;
   overflow: hidden;
   line-height: 0;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+  position: relative;
 }
 
+/* Sophisticated monochrome overlay technique applied directly onto the map layer */
 .google-map-embed-card iframe {
   width: 100% !important;
   display: block;
+  filter: grayscale(1) contrast(1.15) brightness(0.95);
+  -webkit-filter: grayscale(1) contrast(1.15) brightness(0.95);
+  mix-blend-mode: multiply;
+  transition: var(--transition-smooth);
+}
+
+.google-map-embed-card:hover iframe {
+  filter: grayscale(0.2) contrast(1) brightness(1);
+  -webkit-filter: grayscale(0.2) contrast(1) brightness(1);
 }
 
 .contact-social-pane {
@@ -738,7 +668,6 @@ body {
   flex-shrink: 0;
 }
 
-/* Handled explicit color parameters cleanly */
 .insta-icon-vector {
   stroke: none !important;
   fill: none !important;
@@ -867,7 +796,6 @@ body {
   .hero-title { font-size: 4.5rem; }
   .hero-cta-group { flex-direction: row; }
 
-  /* Displays divider smoothly on wide views */
   .section-divider-banner {
     display: block;
   }
@@ -899,17 +827,9 @@ body {
   .gallery-item img { transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1); }
   .gallery-item:hover img { transform: scale(1.06); }
 
-  /* Expanded nested review pane framing layout */
   .google-reviews-widget-wrapper {
-    padding: 3.5rem 3rem;
+    padding: 3rem;
   }
-
-  .testimonials-carousel {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
-  }
-  .testimonial-card { padding: 3rem 2rem; }
 
   .contact-card-wrapper { grid-template-columns: 1.2fr 0.8fr; gap: 4rem; }
   .contact-details-list { grid-template-columns: 1fr 1fr; }
